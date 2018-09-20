@@ -14,7 +14,7 @@
 
   &__navigation {
     display: inline-block;
-    border-top: 1px solid $color-gray-dark;
+    border-top: 1px solid $color-gray-dark-1;
     padding-top: 2rem;
   }
 
@@ -53,7 +53,7 @@
   &__copyright {
     width: 80%;
     float: right;
-    border-top: 1px solid $color-gray-dark;
+    border-top: 1px solid $color-gray-dark-1;
     padding-top: 2rem;
   }
 }
