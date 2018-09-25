@@ -9,14 +9,16 @@
   opacity: 0;
   visibility: hidden;
   transition: all .3s;
+  overflow: scroll;
 
+  
   &:target {
     opacity: 1;
     visibility: visible;
   }
-
+  
   &__close {
-
+    
     &:link,
     &:visited {
       display: inline-block;
@@ -29,16 +31,21 @@
       text-decoration: none;
       transition: all 2s;
     }
-
+    
     &:hover,
     &:active {
       color: $color-primary;
     }
   }
-
+  
   &:target &__content {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
+ 
+    @include responsive(tab-port) {
+      margin-bottom: 4rem;
+      transform: translate(-50%, -30%) scale(1);
+    }
   } 
 
   &__content {
@@ -46,7 +53,6 @@
 
     display: table;
     width: 75%;
-    height: 50rem;
     border-radius: 3px;
     background-color: $color-white;
     box-shadow: 0 2rem 4rem rgba($color-black, .4);
@@ -59,6 +65,10 @@
   &__left {
     display: table-cell;
     width: 33.333333%;
+
+    @include responsive(tab-port) {
+      display: none;
+    }
   }
 
   &__right {
@@ -66,6 +76,11 @@
     width: 66.666667%;
     padding: 3rem 5rem;
     vertical-align: middle;
+
+    @include responsive(tab-port) {
+      display: block;
+      width: 100%;
+    }
   }
 
   &__photo {
@@ -86,5 +101,15 @@
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto;
+
+    @include responsive(tab-port) {
+      margin-bottom: 4rem;
+      font-size: $default-font-size;
+
+      -moz-column-count: 1;
+      column-count: 1;
+      -moz-column-gap: 0;
+      column-gap: 0;
+    }
   }
 }

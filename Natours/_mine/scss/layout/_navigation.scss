@@ -16,6 +16,15 @@
     text-align: center;
     cursor: pointer;
     box-shadow: 0 1rem 3rem rgba($color-black, .2);
+
+    @include responsive(tab-port) {
+      top: 4.5rem;
+      right: 4.5rem;
+    }
+    @include responsive(phone) {
+      top: 3rem;
+      right: 3rem;
+    }
   }
 
   &__background {
@@ -28,6 +37,15 @@
     border-radius: 50%;
     background-image: radial-gradient($color-primary-light, $color-primary-dark);
     transition: transform .4s ease-out;
+
+    @include responsive(tab-port) {
+      top: 4.75rem;
+      right: 4.75rem;
+    }
+    @include responsive(phone) {
+      top: 3.25rem;
+      right: 3.25rem;
+    }
   }
 
   &__nav {
